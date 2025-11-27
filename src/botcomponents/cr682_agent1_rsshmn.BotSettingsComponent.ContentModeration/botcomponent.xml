@@ -1,0 +1,9 @@
+<botcomponent schemaname="cr682_agent1_rsshmn.BotSettingsComponent.ContentModeration">
+  <componenttype>18</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <parentbotid>
+    <schemaname>cr682_agent1_rsshmn</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

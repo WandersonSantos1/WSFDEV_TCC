@@ -1,0 +1,32 @@
+<appaction uniquename="wsf__Concluir!4ed3fcf1f11c4cfdaad1c76a8d6ccbdc!wsf_TechAssetManager!wsf_requisicao!0">
+  <appmoduleid>
+    <uniquename>wsf_TechAssetManager</uniquename>
+  </appmoduleid>
+  <buttonlabeltext default="Concluir">
+    <label description="Concluir" languagecode="1033" />
+  </buttonlabeltext>
+  <context>1</context>
+  <contextentity>
+    <logicalname>wsf_requisicao</logicalname>
+  </contextentity>
+  <contextvalue>wsf_requisicao</contextvalue>
+  <fonticon>ThumbsUp</fonticon>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>Concluir!4ed3fcf1f11c4cfdaad1c76a8d6ccbdc</name>
+  <onclickeventjavascriptfunctionname>ConcluirEntrega</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[{"type":5}]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>1c16a1a2-52ca-f011-bbd3-6045bd0a5843</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>0</origin>
+  <sequence>100100009.4375000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

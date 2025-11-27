@@ -1,0 +1,10 @@
+<botcomponent schemaname="cr682_agent1_rsshmn.topic.ResetConversation">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>Redefinir conversa</name>
+  <parentbotid>
+    <schemaname>cr682_agent1_rsshmn</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

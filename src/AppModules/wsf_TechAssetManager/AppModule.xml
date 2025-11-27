@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>wsf_TechAssetManager</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>2989d572-982f-e911-8185-000d3a0704f0</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="wsf_dispositivos" />
+    <AppModuleComponent type="1" schemaName="wsf_fornecedores" />
+    <AppModuleComponent type="1" schemaName="wsf_requisicao" />
+    <AppModuleComponent type="62" schemaName="wsf_TechAssetManager" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="Tech Asset Manager" languagecode="1033" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="Sistema administrativo (Back-office) para gestão do ciclo de vida de ativos de TI. Inclui módulos de cadastro de dispositivos (Catálogo), controle de saldo de estoque e fluxo de aprovação de requisições de colaboradores." languagecode="1033" />
+  </Descriptions>
+  <appelements>
+    <appelement uniquename="wsf_wsf_TechAssetManager_canvasappid_wsf_techassetmanagerdefaultcommandlibrary_8558d">
+      <canvasappid>
+        <name>wsf_techassetmanagerdefaultcommandlibrary_8558d</name>
+      </canvasappid>
+      <iscustomizable>1</iscustomizable>
+      <name>wsf_wsf_TechAssetManager_canvasappid_wsf_techassetmanagerdefaultcommandlibrary_8558d</name>
+    </appelement>
+  </appelements>
+  <appsettings>
+    <appsetting settingdefinitionid.uniquename="AppChannel">
+      <iscustomizable>1</iscustomizable>
+      <value>1</value>
+    </appsetting>
+  </appsettings>
+</AppModule>

@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr682_agent1_rsshmn.topic.Greeting">
+  <componenttype>9</componenttype>
+  <description>Esse tópico é disparado quando o usuário cumprimenta o agente.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Saudação</name>
+  <parentbotid>
+    <schemaname>cr682_agent1_rsshmn</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

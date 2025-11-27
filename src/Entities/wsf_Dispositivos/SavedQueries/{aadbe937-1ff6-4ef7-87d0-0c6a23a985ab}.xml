@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{aadbe937-1ff6-4ef7-87d0-0c6a23a985ab}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="wsf_modelo" select="1" icon="1" preview="1">
+        <row name="result" id="wsf_dispositivosid">
+          <cell name="wsf_modelo" width="300" />
+          <cell name="wsf_fabricante" width="150" />
+          <cell name="wsf_tipos" width="100" />
+          <cell name="wsf_precounitario" width="150" />
+          <cell name="wsf_estoqueatual" width="150" />
+          <cell name="wsf_estoqueminimo" width="150" />
+          <cell name="wsf_fornecedorpadrao" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="wsf_dispositivos">
+          <attribute name="wsf_dispositivosid" />
+          <attribute name="wsf_modelo" />
+          <attribute name="createdon" />
+          <order attribute="wsf_modelo" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="wsf_fabricante" />
+          <attribute name="wsf_precounitario" />
+          <attribute name="wsf_estoqueatual" />
+          <attribute name="wsf_estoqueminimo" />
+          <attribute name="wsf_fornecedorpadrao" />
+          <attribute name="wsf_tipos" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Catálogo de Dispositivos" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

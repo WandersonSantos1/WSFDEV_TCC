@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SiteMapUniqueName>wsf_TechAssetManager</SiteMapUniqueName>
+  <EnableCollapsibleGroups>False</EnableCollapsibleGroups>
+  <ShowHome>True</ShowHome>
+  <ShowPinned>True</ShowPinned>
+  <ShowRecents>True</ShowRecents>
+  <SiteMap IntroducedVersion="7.0.0.0">
+    <Area Id="area_4dcd488d" ResourceId="SitemapDesigner.NewTitle" DescriptionResourceId="SitemapDesigner.NewTitle" ShowGroups="true" IntroducedVersion="7.0.0.0">
+      <Titles>
+        <Title LCID="1033" Title="Área1" />
+      </Titles>
+      <Group Id="group_931f79b4" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1033" Title="Gestão de Ativos" />
+        </Titles>
+        <SubArea Id="subarea_233f0fbd" VectorIcon="/WebResources/msdyn_csac_casesettings" Icon="/WebResources/msdyn_csac_casesettings" Entity="wsf_dispositivos" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_3c83a775" VectorIcon="/WebResources/msdyn_OmnichannelBase/_imgs/SitemapIcon/Users" Icon="/WebResources/msdyn_OmnichannelBase/_imgs/SitemapIcon/Users" Entity="wsf_fornecedores" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+      </Group>
+      <Group Id="group_95d698e9" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1033" Title="Operação" />
+        </Titles>
+        <SubArea Id="subarea_3cbe6589" VectorIcon="/WebResources/msdyn_OmnichannelBase/_imgs/SitemapIcon/CDSEntity" Icon="/WebResources/msdyn_OmnichannelBase/_imgs/SitemapIcon/CDSEntity" Entity="wsf_requisicao" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+      </Group>
+    </Area>
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="Tech Asset Manager" languagecode="1033" />
+  </LocalizedNames>
+</AppModuleSiteMap>

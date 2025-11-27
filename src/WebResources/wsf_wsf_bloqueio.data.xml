@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{95ac6369-a9c8-f011-bbd3-6045bd0a5843}</WebResourceId>
+  <Name>wsf_wsf_bloqueio</Name>
+  <DisplayName>wsf_bloqueiojs</DisplayName>
+  <Description>Script JavaScript executado no evento 'OnLoad' do formulário de Requisição. Implementa regra de negócio para bloquear (desabilitar) todos os campos do formulário quando o status da requisição for 'Aprovado' ou 'Recusado', garantindo a integridade dos registros finalizados.</Description>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/wsf_wsf_bloqueio95AC6369-A9C8-F011-BBD3-6045BD0A5843</FileName>
+</WebResource>

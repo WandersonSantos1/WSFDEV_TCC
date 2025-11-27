@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr682_agent1_rsshmn.topic.ThankYou">
+  <componenttype>9</componenttype>
+  <description>Esse tópico é disparado quando o usuário agradece.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Obrigado</name>
+  <parentbotid>
+    <schemaname>cr682_agent1_rsshmn</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

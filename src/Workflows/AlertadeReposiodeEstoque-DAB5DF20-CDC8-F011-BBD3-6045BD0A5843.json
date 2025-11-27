@@ -1,0 +1,119 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_9c7af"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "wsf_sharedoffice365_8c944"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "Quando_uma_linha_é_adicionada,_modificada_ou_excluída": {
+          "metadata": {
+            "operationMetadataId": "bcfdb435-8ed8-47fc-aac4-3b623d7766b5"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "wsf_dispositivos",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "wsf_estoqueatual"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          }
+        }
+      },
+      "actions": {
+        "Condição": {
+          "actions": {
+            "Enviar_um_email_(V2)": {
+              "runAfter": {
+                "Obter_uma_linha_por_ID": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "8dd3efac-aa5c-4aa1-af20-ec2791936dbb"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "emailMessage/To": "mollyc@CRM182341.OnMicrosoft.com",
+                  "emailMessage/Subject": "⚠️ ALERTA DE ESTOQUE: @{triggerOutputs()?['body/wsf_modelo']}",
+                  "emailMessage/Body": "<p class=\"editor-paragraph\">Atenção Compras,<br><br>O item &nbsp;&nbsp;@{triggerOutputs()?['body/wsf_modelo']}atingiu o nível mínimo!<br><br>📉 Estoque Atual: @{triggerOutputs()?['body/wsf_estoqueatual']}<br>🛑 Estoque Mínimo: @{triggerOutputs()?['body/wsf_estoqueminimo']}</p><br><br><p class=\"editor-paragraph\">Dados para Contato Imediato:</p><br><p class=\"editor-paragraph\">Fornecedor Padrao: @{outputs('Obter_uma_linha_por_ID')?['body/wsf_nome']}</p><br><p class=\"editor-paragraph\">E-mail: @{outputs('Obter_uma_linha_por_ID')?['body/wsf_emailcomercial']}</p><br><p class=\"editor-paragraph\">Telefone: @{outputs('Obter_uma_linha_por_ID')?['body/wsf_telefonecomercial']} <br><br>-----/-----<br>Modelo: @{triggerOutputs()?['body/wsf_modelo']}</p><p class=\"editor-paragraph\">Preço unitário: @{formatNumber(triggerOutputs()?['body/wsf_precounitario'], 'C', 'pt-BR')}</p><p class=\"editor-paragraph\"><br>Favor providenciar reposição.</p>",
+                  "emailMessage/Importance": "Normal"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                  "operationId": "SendEmailV2",
+                  "connectionName": "shared_office365"
+                }
+              }
+            },
+            "Obter_uma_linha_por_ID": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "wsf_fornecedoreses",
+                  "recordId": "@triggerOutputs()?['body/_wsf_fornecedorpadrao_value']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              }
+            }
+          },
+          "runAfter": {},
+          "else": {
+            "actions": {}
+          },
+          "expression": {
+            "lessOrEquals": [
+              "@triggerOutputs()?['body/wsf_estoqueatual']",
+              "@triggerOutputs()?['body/wsf_estoqueminimo']"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "87a3400e-6b81-4b67-8262-7a0f5a445346"
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

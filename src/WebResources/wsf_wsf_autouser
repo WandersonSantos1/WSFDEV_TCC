@@ -1,0 +1,37 @@
+function PreencherUsuarioLogado(executionContext) {
+    // Pega o contexto do formulário
+    var formContext = executionContext.getFormContext();
+
+    // SÓ roda se for um formulário de CRIAÇÃO (Novo Pedido)
+    // Se for edição, não faz nada para não estragar dados antigos
+    if (formContext.ui.getFormType() === 1) {
+
+        // 1. Pega os dados de quem está logado (Você)
+        var userSettings = Xrm.Utility.getGlobalContext().userSettings;
+        var userId = userSettings.userId.replace("{", "").replace("}", ""); // Limpa as chaves do ID
+        var userName = userSettings.userName;
+
+        // 2. Monta o valor para o campo de Lookup
+        // Estamos dizendo que é um 'systemuser' (Usuário do Sistema)
+        var valorParaGravar = [{
+            id: userId,
+            name: userName,
+            entityType: "systemuser" 
+        }];
+
+        // 3. Acessa o campo na tela
+        // VERIFIQUE SE O NOME DO SEU CAMPO É 'wsf_solicitante' (ou o nome do lookup de contato)
+        var campoSolicitante = formContext.getAttribute("wsf_solicitante"); // <--- CONFIRA ESSE NOME
+        var controleSolicitante = formContext.getControl("wsf_solicitante"); // <--- CONFIRA ESSE NOME
+
+        if (campoSolicitante != null) {
+            // Preenche o valor
+            campoSolicitante.setValue(valorParaGravar);
+            
+            // Bloqueia o campo para ninguém mudar
+            if (controleSolicitante != null) {
+                controleSolicitante.setDisabled(true);
+            }
+        }
+    }
+}

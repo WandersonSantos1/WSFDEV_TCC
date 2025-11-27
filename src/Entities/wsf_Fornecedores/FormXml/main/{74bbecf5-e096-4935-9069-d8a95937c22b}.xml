@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{74bbecf5-e096-4935-9069-d8a95937c22b}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{fcf740b7-2d66-4865-94c5-5301b120870a}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{75b2c841-d8ca-4f68-9112-cd7ad67e802a}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{66035181-da82-4359-997a-c6536e033536}">
+                        <labels>
+                          <label description="Nome" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_nome" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="wsf_nome" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5abc39d6-61d4-492b-95df-44710de75647}" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{968d02ec-fea1-40cd-be74-2982b8dd9785}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="CNPJ" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_cnpj" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="wsf_cnpj" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dbd92f08-597c-4a17-a1f3-66f8360f723c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Inscrição Estadual" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_inscricaoestadual" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="wsf_inscricaoestadual" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c7de0fc5-19ca-45b3-85cb-43a092e2aef7}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Endereço Completo" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_enderecocompleto" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="wsf_enderecocompleto" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{496d8796-daf8-467b-b689-386698eb3491}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Email Comercial" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_emailcomercial" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="wsf_emailcomercial" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{700b3203-9710-4122-9dd8-adafad9950ba}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Telefone Comercial" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_telefonecomercial" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="wsf_telefonecomercial" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{38caf7ca-9f7e-4ed9-851c-1ba4908f6691}">
+                        <labels>
+                          <label description="Status" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_status" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="wsf_status" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{ee16f044-c598-4bbd-b789-a261d6902e58}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{59044fe2-9b31-4321-9e83-adbe368205b1}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{18a388c6-69fe-4980-89f6-6bfd8f973859}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{85a595ad-0ef7-4317-8d58-2df8d308b03b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{1caefefa-6816-42b9-ab6b-5c5c7222c877}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{363bac02-3bfa-4eb7-a3c7-a775232d7142}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{907b3248-e12e-4f92-9fcf-aa4515644ca9}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{7f3a339c-d026-4995-b0bd-06e8c3e9835a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="wsf_wsf_mascaras" libraryUniqueId="{7026e981-4026-402f-a4a8-6be973de993f}" />
+      </formLibraries>
+      <events>
+        <event name="onchange" application="false" active="false" attribute="wsf_cnpj">
+          <Handlers>
+            <Handler functionName="FormatarCNPJ" libraryName="wsf_wsf_mascaras" handlerUniqueId="{58014fe1-ccb9-4267-ab52-94685b480f93}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="wsf_telefonecomercial">
+          <Handlers>
+            <Handler functionName="FormatarTelefone" libraryName="wsf_wsf_mascaras" handlerUniqueId="{91bd77c5-9ce7-4f9f-b1f6-59dae9817496}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

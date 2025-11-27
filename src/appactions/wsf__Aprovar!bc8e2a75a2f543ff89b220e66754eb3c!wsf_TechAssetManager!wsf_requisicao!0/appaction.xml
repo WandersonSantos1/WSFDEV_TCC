@@ -1,0 +1,32 @@
+<appaction uniquename="wsf__Aprovar!bc8e2a75a2f543ff89b220e66754eb3c!wsf_TechAssetManager!wsf_requisicao!0">
+  <appmoduleid>
+    <uniquename>wsf_TechAssetManager</uniquename>
+  </appmoduleid>
+  <buttonlabeltext default="Aprovar">
+    <label description="Aprovar" languagecode="1033" />
+  </buttonlabeltext>
+  <context>1</context>
+  <contextentity>
+    <logicalname>wsf_requisicao</logicalname>
+  </contextentity>
+  <contextvalue>wsf_requisicao</contextvalue>
+  <fonticon>$clientsvg:Accept</fonticon>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>Aprovar!bc8e2a75a2f543ff89b220e66754eb3c</name>
+  <onclickeventjavascriptfunctionname>AprovarPedido</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[{"type":5}]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>1c16a1a2-52ca-f011-bbd3-6045bd0a5843</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>0</origin>
+  <sequence>100100007.7500000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

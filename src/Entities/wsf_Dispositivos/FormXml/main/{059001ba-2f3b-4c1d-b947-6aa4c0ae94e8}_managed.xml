@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{059001ba-2f3b-4c1d-b947-6aa4c0ae94e8}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{f33abcf4-89b9-45f5-9a77-527d1b786376}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{63c56e1c-b04a-4941-8aa8-5b8edf96d3b0}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3b3a7137-ea33-434f-906d-44168328c4b1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_tipos" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="wsf_tipos" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4f2b5f4f-2d2d-4b50-a5ab-9b57f94d13ba}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_modelo" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="wsf_modelo" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e87c30b9-ed41-4188-9024-1fe8f12b217f}" visible="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7c6cd95b-e8aa-494c-b655-ffa383b646b6}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_fabricante" classid="{4aa28ab7-9c13-4f57-a73d-ad894d048b5f}" datafieldname="wsf_fabricante" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7aa071cc-7438-4bd1-9469-db63859b7836}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_estoqueatual" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="wsf_estoqueatual" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f62c0aa7-6263-4cfe-99cc-45085649b6ee}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_estoqueminimo" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="wsf_estoqueminimo" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4f4886ec-2cc4-476c-ab60-ee86a70f0d11}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_precounitario" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="wsf_precounitario" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{98b322a0-b582-46a1-914d-d02bbf3969fe}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_fornecedorpadrao" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="wsf_fornecedorpadrao" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c65c809d-eb3c-4573-8a49-c0f0cefd4753}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="transactioncurrencyid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="transactioncurrencyid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{70b558bd-a7dd-4aa1-9554-682556a58404}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{b7647bc4-096d-4154-94c7-2bced184b6ff}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{524a558a-25d4-4e6b-aacc-c0ea17cda51c}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{6c52a12a-a78b-4a5b-a691-6b603ee41e71}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{d9ed5ffd-9d7f-4510-85b7-c52f35d85f15}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{11a7a163-7d80-4277-ba63-5739e59542a6}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{793f9622-cf5f-4ed4-9c80-dbe2e35a9a39}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{c10eaa0e-28f2-466a-9a1f-c735400ee3c9}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="wsf_wsf_moeda" libraryUniqueId="{427a0621-82d4-46ec-806c-e5cd9bace431}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="DefinirMoedaPadrao" libraryName="wsf_wsf_moeda" handlerUniqueId="{714d2450-2bb4-4a9b-a09a-018740f2c9a4}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

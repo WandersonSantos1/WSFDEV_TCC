@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.25103.175" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25103.175" OrganizationSchemaType="Full" CRMServerServiceabilityVersion="9.2.25103.00175">
+  <SolutionManifest>
+    <UniqueName>WSFDEV_TCC</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="WSF-DEV" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.0</Version>
+    <Managed>2</Managed>
+    <Publisher>
+      <UniqueName>WSFDev</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="WSF Dev" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>wsf</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>96250</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="contact" behavior="1" />
+      <RootComponent type="1" schemaName="wsf_dispositivos" behavior="0" />
+      <RootComponent type="1" schemaName="wsf_fornecedores" behavior="0" />
+      <RootComponent type="1" schemaName="wsf_requisicao" behavior="0" />
+      <RootComponent type="29" id="{8759de37-d2c4-f011-bbd3-6045bd0a5843}" behavior="0" />
+      <RootComponent type="29" id="{8c44c30c-8bc8-f011-bbd3-6045bd0a5843}" behavior="0" />
+      <RootComponent type="29" id="{dab5df20-cdc8-f011-bbd3-6045bd0a5843}" behavior="0" />
+      <RootComponent type="300" schemaName="wsf_techassetmanagerdefaultcommandlibrary_8558d" behavior="0" />
+      <RootComponent type="61" schemaName="wsf_ribbon.js" behavior="0" />
+      <RootComponent type="61" schemaName="wsf_wsf_autouser" behavior="0" />
+      <RootComponent type="61" schemaName="wsf_wsf_autouser_2" behavior="0" />
+      <RootComponent type="61" schemaName="wsf_wsf_bloqueio" behavior="0" />
+      <RootComponent type="61" schemaName="wsf_wsf_filtro_cascata" behavior="0" />
+      <RootComponent type="61" schemaName="wsf_wsf_mascaras" behavior="0" />
+      <RootComponent type="61" schemaName="wsf_wsf_moeda" behavior="0" />
+      <RootComponent type="61" schemaName="wsf_wsf_ribbon_Rejeita.js" behavior="0" />
+      <RootComponent type="62" schemaName="wsf_TechAssetManager" behavior="0" />
+      <RootComponent type="80" schemaName="wsf_TechAssetManager" behavior="0" />
+      <RootComponent type="9" schemaName="wsf_tiposdeequipamento" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_csac_casesettings" displayName="msdyn_csac_casesettings" solution="msdyn_CSAdminCenterApp (1.163.251105.11)">
+          <package appName="ServiceExtended" version="9.0.25102.2013">msdyn_ServiceExtendedAnchor (9.0.25102.2013)</package>
+        </Required>
+        <Dependent type="62" schemaName="wsf_TechAssetManager" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_OmnichannelBase/_imgs/SitemapIcon/CDSEntity" displayName="msdyn_OmnichannelBase/_imgs/SitemapIcon/CDSEntity" solution="OmnichannelBase (1.10.0.110)">
+          <package appName="UnifiedRoutingPrime" version="1.5.27.124">UnifiedRoutingPrimeAnchor (1.5.27.124)</package>
+        </Required>
+        <Dependent type="62" schemaName="wsf_TechAssetManager" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_OmnichannelBase/_imgs/SitemapIcon/CDSEntity" displayName="msdyn_OmnichannelBase/_imgs/SitemapIcon/CDSEntity" solution="OmnichannelBase (1.10.0.110)">
+          <package appName="UnifiedRoutingPrime" version="1.5.27.124">UnifiedRoutingPrimeAnchor (1.5.27.124)</package>
+        </Required>
+        <Dependent type="80" schemaName="wsf_TechAssetManager" displayName="Tech Asset Manager" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_OmnichannelBase/_imgs/SitemapIcon/Users" displayName="msdyn_OmnichannelBase/_imgs/SitemapIcon/Users" solution="OmnichannelBase (1.10.0.110)">
+          <package appName="UnifiedRoutingPrime" version="1.5.27.124">UnifiedRoutingPrimeAnchor (1.5.27.124)</package>
+        </Required>
+        <Dependent type="62" schemaName="wsf_TechAssetManager" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="new_sharedcommondataserviceforapps_9c7af" solution="Active" id.connectionreferencelogicalname="new_sharedcommondataserviceforapps_9c7af" />
+        <Dependent type="29" displayName="Notificação Requisição Final" id="{8c44c30c-8bc8-f011-bbd3-6045bd0a5843}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="new_sharedcommondataserviceforapps_9c7af" solution="Active" id.connectionreferencelogicalname="new_sharedcommondataserviceforapps_9c7af" />
+        <Dependent type="29" displayName="Alerta de Reposição de Estoque" id="{dab5df20-cdc8-f011-bbd3-6045bd0a5843}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.15)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.23">PowerAppsAppFramework_Anchor (1.0.0.23)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=wsf_TechAssetManager,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="wsf_TechAssetManager" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

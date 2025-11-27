@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{eb1db8cf-adc8-f011-bbd3-6045bd0a5843}</WebResourceId>
+  <Name>wsf_wsf_autouser</Name>
+  <DisplayName>Script Auto Solicitante</DisplayName>
+  <Description>Script executado no evento 'OnLoad' (apenas em formulários de Criação). Recupera o contexto do usuário logado através da API do cliente (Xrm.Utility) e preenche automaticamente o campo 'Solicitante', bloqueando-o para edição. Garante que a requisição seja sempre registrada em nome do usuário conectado.</Description>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/wsf_wsf_autouserEB1DB8CF-ADC8-F011-BBD3-6045BD0A5843</FileName>
+</WebResource>

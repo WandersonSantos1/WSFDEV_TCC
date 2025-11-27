@@ -1,0 +1,25 @@
+function DefinirMoedaPadrao(executionContext) {
+    var formContext = executionContext.getFormContext();
+
+    // Só roda se for Criar Novo (FormType = 1)
+    if (formContext.ui.getFormType() === 1) {
+
+        // --- CONFIGURAÇÃO DO REAL ---
+        var idMoeda = "{a0d874bf-09ca-f011-bbd3-6045bd0a5843}"; // O teu ID
+        var nomeMoeda = "Real Brasileiro"; // O nome que aparece na tela
+        // ----------------------------
+
+        var valorLookup = [{
+            id: idMoeda,
+            name: nomeMoeda,
+            entityType: "transactioncurrency" // Tabela de Moedas
+        }];
+
+        // O nome do campo de moeda no Dynamics é sempre 'transactioncurrencyid'
+        var campoMoeda = formContext.getAttribute("transactioncurrencyid");
+
+        if (campoMoeda != null) {
+            campoMoeda.setValue(valorLookup);
+        }
+    }
+}

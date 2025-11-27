@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{157f7260-f949-4d99-b602-1cc6aa91aef8}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{f432b05a-a7d0-421c-83ba-4044c1c21396}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{d9c93241-293c-4e06-b153-5aaf29bad477}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ea18c413-f61e-4cc1-a233-f83445efd193}" visible="false">
+                        <labels>
+                          <label description="Código do Pedido" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_codigodopedido" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="wsf_codigodopedido" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9f16921e-5b45-4abb-a854-c22bb991f66f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="ID-Pedido" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_idpedido" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="wsf_idpedido" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e92a659f-c4cc-4748-a6d4-8e61a81aac53}" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{18cfa66d-cd95-47d7-807f-c8ec34bfd4f5}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Solicitante" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_solicitante" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="wsf_solicitante" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d66ab780-8b70-45d3-a268-672340ec5491}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Filtrar por Tipo" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_filtrarportipo" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="wsf_filtrarportipo" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6d45f0ed-3261-4a17-9633-9bde576a357e}">
+                        <labels>
+                          <label description="Dispositivo" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_dispositivo" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="wsf_dispositivo" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f12bf445-baf8-4f17-8508-0ba7af47e2c6}">
+                        <labels>
+                          <label description="Quantidade" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_quantidade" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="wsf_quantidade" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ffc63aa9-33c4-4eb9-8333-9f999be26bbc}">
+                        <labels>
+                          <label description="Prioridade" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_prioridade" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="wsf_prioridade" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7e361039-550e-49a8-96ab-17905c3553a7}">
+                        <labels>
+                          <label description="Status" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_status" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="wsf_status" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0dc5f3ef-05fc-43bc-ae91-fe55b1374136}">
+                        <labels>
+                          <label description="Justificativa" languagecode="1033" />
+                        </labels>
+                        <control id="wsf_justificativati" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="wsf_justificativati" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a96360d5-3bd2-4428-a492-47276d7874d1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Ultima modificiação" languagecode="1033" />
+                        </labels>
+                        <control id="modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7914757b-62b0-4662-baec-634ec000ee30}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Criado em:" languagecode="1033" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{32cb0a1a-2b93-4fc0-9dc4-921f6c8e9844}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{dc469d27-0172-465f-8d07-b7bc55d9da5f}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{d62f925b-2cf3-4db4-afef-fe0ea06652fe}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{ba2ba8da-a4a2-45ec-8d93-a27bc7d87cdb}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{af449149-aa5a-4ee1-9a43-2cdcfeee4c78}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{9640c03c-3c25-4c0c-8479-62337a46c017}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{de46851c-7578-428e-961b-de6229097066}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{294904d2-4571-4364-97fd-f786ebc2486c}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="wsf_wsf_bloqueio" libraryUniqueId="{76d488d8-ba7c-4f0c-a4bc-d8277ba7a905}" />
+        <Library name="wsf_wsf_autouser" libraryUniqueId="{4655197e-401b-4a8a-ba65-80c3e62aa98d}" />
+        <Library name="wsf_wsf_filtro_cascata" libraryUniqueId="{83408133-321f-4e6f-b818-3de70e808ab6}" />
+        <Library name="wsf_wsf_autouser_2" libraryUniqueId="{6d25db82-cc7c-4079-b1d3-bc840a93a776}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="BloquearFormularioSeFinalizado" libraryName="wsf_wsf_bloqueio" handlerUniqueId="{223ac775-a097-4f51-836c-1a619662dc56}" enabled="true" parameters="" passExecutionContext="true" />
+            <Handler functionName="PreencherUsuarioLogado" libraryName="wsf_wsf_bloqueio" handlerUniqueId="{ca1f0175-f314-4fe5-8aee-db4d781b4058}" enabled="false" parameters="" passExecutionContext="true" />
+            <Handler functionName="FiltrarModeloPorTipo" libraryName="wsf_wsf_filtro_cascata" handlerUniqueId="{657e01b2-2898-4c8a-899a-7dccaf6d60b8}" enabled="true" parameters="" passExecutionContext="true" />
+            <Handler functionName="PreencherUsuarioLogado" libraryName="wsf_wsf_autouser_2" handlerUniqueId="{fe69cc3b-8883-4b44-a1e7-2e025ce25273}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="wsf_filtrarportipo">
+          <Handlers>
+            <Handler functionName="FiltrarModeloPorTipo" libraryName="wsf_wsf_filtro_cascata" handlerUniqueId="{72ca81cd-84f9-473f-81a0-e78ac65e206a}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

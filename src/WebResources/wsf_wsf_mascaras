@@ -1,0 +1,50 @@
+// Função para formatar CNPJ
+function FormatarCNPJ(executionContext) {
+    var formContext = executionContext.getFormContext();
+    
+    // VERIFIQUE O NOME DO SEU CAMPO (wsf_cnpj?)
+    var nomeCampo = "wsf_cnpj"; 
+    var campo = formContext.getAttribute(nomeCampo);
+
+    if (campo != null && campo.getValue() != null) {
+        var valor = campo.getValue().toString().replace(/\D/g, ""); // Remove tudo que não é número
+
+        if (valor.length > 14) valor = valor.substring(0, 14); // Limita a 14 números
+
+        // Aplica a máscara: 00.000.000/0000-00
+        if (valor.length === 14) {
+            valor = valor.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
+            campo.setValue(valor);
+        } 
+        else {
+            // Opcional: Se digitar menos números, pode limpar ou avisar
+            // campo.setValue(null); 
+        }
+    }
+}
+
+// Função para formatar Telefone (Fixo ou Celular)
+function FormatarTelefone(executionContext) {
+    var formContext = executionContext.getFormContext();
+    
+    // VERIFIQUE O NOME DO SEU CAMPO (wsf_telefonecomercial?)
+    var nomeCampo = "wsf_telefonecomercial";
+    var campo = formContext.getAttribute(nomeCampo);
+
+    if (campo != null && campo.getValue() != null) {
+        var valor = campo.getValue().toString().replace(/\D/g, ""); // Remove não números
+        
+        if (valor.length > 11) valor = valor.substring(0, 11);
+
+        // Máscara para Celular (11) 91234-5678
+        if (valor.length === 11) {
+            valor = valor.replace(/^(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+            campo.setValue(valor);
+        } 
+        // Máscara para Fixo (11) 1234-5678
+        else if (valor.length === 10) {
+            valor = valor.replace(/^(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
+            campo.setValue(valor);
+        }
+    }
+}

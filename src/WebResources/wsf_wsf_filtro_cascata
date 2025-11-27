@@ -1,0 +1,42 @@
+function FiltrarModeloPorTipo(executionContext) {
+    var formContext = executionContext.getFormContext();
+
+    // --- CONFIGURAÇÃO DOS NOMES (Confere se os teus são estes!) ---
+    var campoFiltro = "wsf_filtrarportipo";      // O campo novo que criaste na Requisição
+    var campoLookup = "wsf_dispositivo";      // O campo Lupa (Modelo) na Requisição
+    var campoTipoNoProduto = "wsf_tipos";      // O nome do campo 'Tipo' lá na tabela de Dispositivos
+    var tabelaDispositivos = "wsf_dispositivos"; // O nome lógico da tabela de produtos (plural?)
+    // --------------------------------------------------------------
+
+    var controleLookup = formContext.getControl(campoLookup);
+    var atributoFiltro = formContext.getAttribute(campoFiltro);
+
+    // Segurança: Se os campos não existirem na tela, para tudo
+    if (!controleLookup || !atributoFiltro) return;
+
+    var valorTipo = atributoFiltro.getValue();
+
+    // 1. Se não escolheu nenhum tipo, TRAVA o campo Modelo
+    if (valorTipo == null) {
+        controleLookup.setDisabled(true);
+    } else {
+        controleLookup.setDisabled(false);
+    }
+
+    // 2. Adiciona o Filtro ao evento "PreSearch" (Antes de Pesquisar)
+    controleLookup.addPreSearch(function () {
+        
+        // Pega o valor atualizado do tipo
+        var valorAtual = atributoFiltro.getValue();
+
+        if (valorAtual != null) {
+            // Cria o XML de filtro (Dizendo: Traga produtos onde 'Tipo' é igual ao selecionado)
+            var filtroXml = "<filter type='and'>" +
+                            "<condition attribute='" + campoTipoNoProduto + "' operator='eq' value='" + valorAtual + "' />" +
+                            "</filter>";
+
+            // Aplica o filtro apenas na tabela de dispositivos
+            controleLookup.addCustomFilter(filtroXml, tabelaDispositivos);
+        }
+    });
+}

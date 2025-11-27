@@ -1,0 +1,27 @@
+function BloquearFormularioSeFinalizado(executionContext) {
+    // 1. Pega o contexto do formulário
+    var formContext = executionContext.getFormContext();
+
+    // 2. Pega o campo de Status
+    // ATENÇÃO: Confirme se o nome lógico da sua coluna é 'wsf_status'. 
+    
+    var statusField = formContext.getAttribute("wsf_status"); 
+    
+    // Segurança: Se o campo não existir na tela, o código para aqui.
+    if (statusField == null) return; 
+
+    // 3. Pega o valor numérico atual do status
+    var statusValue = statusField.getValue();
+
+    // 4. VERIFICAÇÃO: É Aprovado (962500001) OU Recusado (962500002)?
+    if (statusValue === 962500001 || statusValue === 962500002) { 
+        
+        // Loop: Passa por TODOS os controles da tela e desabilita (trava)
+        formContext.ui.controls.forEach(function (control) {
+            control.setDisabled(true);
+        });
+
+        // 5. Mostra um aviso amarelo no topo da tela
+        formContext.ui.setFormNotification("🔒 Este pedido foi finalizado (Aprovado/Recusado) e não pode ser editado.", "WARNING", "aviso_bloqueio");
+    }
+}

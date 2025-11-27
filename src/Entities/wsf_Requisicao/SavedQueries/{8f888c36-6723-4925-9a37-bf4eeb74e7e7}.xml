@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{8f888c36-6723-4925-9a37-bf4eeb74e7e7}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="wsf_codigodopedido" select="1" icon="1" preview="1">
+        <row name="result" id="wsf_requisicaoid">
+          <cell name="wsf_codigodopedido" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="wsf_requisicao">
+          <attribute name="wsf_requisicaoid" />
+          <attribute name="wsf_codigodopedido" />
+          <attribute name="createdon" />
+          <order attribute="wsf_codigodopedido" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Requisição Advanced Find View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

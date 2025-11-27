@@ -1,0 +1,351 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_9c7af"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "wsf_sharedoffice365_8c944"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "Quando_uma_linha_é_adicionada,_modificada_ou_excluída": {
+          "metadata": {
+            "operationMetadataId": "98ccf054-f2e9-4e0b-b302-bf0a606a4024"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "wsf_requisicao",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "wsf_status"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          }
+        }
+      },
+      "actions": {
+        "Validação": {
+          "actions": {
+            "Buscar_Solicitante_Aprovado": {
+              "metadata": {
+                "operationMetadataId": "a84fc36b-a102-4d02-b749-855c1d94d255"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "contacts",
+                  "recordId": "@triggerOutputs()?['body/_wsf_solicitante_value']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              }
+            },
+            "Enviar_Email_Aprovacao": {
+              "runAfter": {
+                "Buscar_Solicitante_Aprovado": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "ac0477f3-8f73-48f3-afd3-bc69ed90da0e"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "emailMessage/To": "@outputs('Buscar_Solicitante_Aprovado')?['body/emailaddress1']",
+                  "emailMessage/Subject": "Aprovado!",
+                  "emailMessage/Body": "<p class=\"editor-paragraph\">Olá, @{outputs('Buscar_Solicitante_Aprovado')?['body/fullname']}<br><br>Temos ótimas notícias! Sua solicitação de equipamento foi analisada pela equipe e o status foi atualizado para APROVADA.<br></p><br><p class=\"editor-paragraph\"><br>📍 Próximos Passos: O equipamento já está sendo separado. Por favor, compareça ao balcão de TI (Almoxarifado) para assinar o termo de responsabilidade e retirar o item.<br><br>Atenciosamente, Equipe Tech Asset Manager</p>",
+                  "emailMessage/Importance": "Normal"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                  "operationId": "SendEmailV2",
+                  "connectionName": "shared_office365"
+                }
+              }
+            }
+          },
+          "runAfter": {},
+          "else": {
+            "actions": {
+              "Recusado": {
+                "actions": {
+                  "Buscar_Solicitante_Recusado": {
+                    "metadata": {
+                      "operationMetadataId": "3d026f50-e6e8-4d82-b52d-09b58052cb35"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "parameters": {
+                        "entityName": "contacts",
+                        "recordId": "@triggerOutputs()?['body/_wsf_solicitante_value']"
+                      },
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "GetItem",
+                        "connectionName": "shared_commondataserviceforapps"
+                      }
+                    }
+                  },
+                  "Enviar_Email_Recusa": {
+                    "runAfter": {
+                      "Buscar_Solicitante_Recusado": [
+                        "Succeeded"
+                      ]
+                    },
+                    "metadata": {
+                      "operationMetadataId": "87da1cd9-bfa2-4382-9dd4-c08bcea0ec5d"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "parameters": {
+                        "emailMessage/To": "@outputs('Buscar_Solicitante_Recusado')?['body/emailaddress1']",
+                        "emailMessage/Subject": "Rejeitado",
+                        "emailMessage/Body": "<p class=\"editor-paragraph\">Olá, @{outputs('Buscar_Solicitante_Recusado')?['body/fullname']}<br><br>Informamos que a sua solicitação de equipamento foi analisada pela equpe e não foi aprovada neste momento.<br><br>📋 Motivo da Recusa:</p><p class=\"editor-paragraph\">@{triggerOutputs()?['body/wsf_justificativati']}<br><br>Caso deseje rever esta decisão, entre em contato com o gestor da área e abra uma nova solicitação corrigindo os pontos mencionados acima.<br><br>Atenciosamente, Equipe Tech Asset Manager</p>",
+                        "emailMessage/Importance": "Normal"
+                      },
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                        "operationId": "SendEmailV2",
+                        "connectionName": "shared_office365"
+                      }
+                    }
+                  }
+                },
+                "else": {
+                  "actions": {
+                    "Falta_de_Estoque": {
+                      "actions": {
+                        "Obter_uma_linha_por_ID": {
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "parameters": {
+                              "entityName": "wsf_dispositivoses",
+                              "recordId": "@triggerOutputs()?['body/_wsf_dispositivo_value']"
+                            },
+                            "host": {
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                              "operationId": "GetItem",
+                              "connectionName": "shared_commondataserviceforapps"
+                            }
+                          }
+                        },
+                        "Enviar_um_email_(V2)": {
+                          "runAfter": {
+                            "Obter_uma_linha_por_ID": [
+                              "Succeeded"
+                            ]
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "parameters": {
+                              "emailMessage/To": "aliciat@CRM182341.OnMicrosoft.com",
+                              "emailMessage/Subject": "⚠️ ALERTA: Ruptura de Estoque - @{outputs('Obter_uma_linha_por_ID')?['body/wsf_modelo']}",
+                              "emailMessage/Body": "<p class=\"editor-paragraph\">Atenção Compras,<br><br>O sistema detectou falta de saldo para atender o seguinte pedido:<br><br>Pedido: @{triggerOutputs()?['body/wsf_idpedido']}</p><p class=\"editor-paragraph\">Item: @{outputs('Obter_uma_linha_por_ID')?['body/wsf_modelo']}</p><p class=\"editor-paragraph\">Quantidade Solicitada: @{triggerOutputs()?['body/wsf_quantidade']}<br><br>Situação do Estoque:<br><br>Saldo Atual: @{outputs('Obter_uma_linha_por_ID')?['body/wsf_estoqueatual']}<br><br>Saldo Mínimo: @{outputs('Obter_uma_linha_por_ID')?['body/wsf_estoqueminimo']}<br><br>O status do pedido foi alterado automaticamente para \"Em Cotação\".</p>",
+                              "emailMessage/Importance": "Normal"
+                            },
+                            "host": {
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                              "operationId": "SendEmailV2",
+                              "connectionName": "shared_office365"
+                            }
+                          }
+                        }
+                      },
+                      "else": {
+                        "actions": {
+                          "É_Pedido_Realizado": {
+                            "actions": {
+                              "Obter_uma_linha_por_ID_1": {
+                                "type": "OpenApiConnection",
+                                "inputs": {
+                                  "parameters": {
+                                    "entityName": "contacts",
+                                    "recordId": "@triggerOutputs()?['body/_wsf_solicitante_value']"
+                                  },
+                                  "host": {
+                                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                                    "operationId": "GetItem",
+                                    "connectionName": "shared_commondataserviceforapps"
+                                  }
+                                }
+                              },
+                              "Enviar_um_email_(V2)_1": {
+                                "runAfter": {
+                                  "Obter_uma_linha_por_ID_1": [
+                                    "Succeeded"
+                                  ]
+                                },
+                                "type": "OpenApiConnection",
+                                "inputs": {
+                                  "parameters": {
+                                    "emailMessage/To": "@outputs('Obter_uma_linha_por_ID_1')?['body/emailaddress1']",
+                                    "emailMessage/Subject": "📦 Compra Efetuada!",
+                                    "emailMessage/Body": "<p class=\"editor-paragraph\">Olá, <br><br>Informamos que a sua solicitação de equipamento foi analisada pela equipe e já está no processo de compras.<br><br>Atenciosamente, Equipe Tech Asset Manager</p>",
+                                    "emailMessage/Importance": "Normal"
+                                  },
+                                  "host": {
+                                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                                    "operationId": "SendEmailV2",
+                                    "connectionName": "shared_office365"
+                                  }
+                                }
+                              }
+                            },
+                            "else": {
+                              "actions": {
+                                "É_Concluído": {
+                                  "actions": {
+                                    "Obter_uma_linha_por_ID_2": {
+                                      "type": "OpenApiConnection",
+                                      "inputs": {
+                                        "parameters": {
+                                          "entityName": "contacts",
+                                          "recordId": "@triggerOutputs()?['body/_wsf_solicitante_value']"
+                                        },
+                                        "host": {
+                                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                                          "operationId": "GetItem",
+                                          "connectionName": "shared_commondataserviceforapps"
+                                        }
+                                      }
+                                    },
+                                    "Enviar_Email_Conclusao": {
+                                      "runAfter": {
+                                        "Obter_uma_linha_por_ID_2": [
+                                          "Succeeded"
+                                        ]
+                                      },
+                                      "type": "OpenApiConnection",
+                                      "inputs": {
+                                        "parameters": {
+                                          "emailMessage/To": "santos.wanderson.dev@outlook.com",
+                                          "emailMessage/Subject": "✅ Seu Pedido foi Concluído/Entregue",
+                                          "emailMessage/Body": "<p class=\"editor-paragraph\">Olá @{outputs('Obter_uma_linha_por_ID_2')?['body/fullname']}, Confirmamos que o processo do seu pedido @{triggerOutputs()?['body/wsf_idpedido']} foi finalizado e o item foi entregue/retirado com sucesso. Caso tenha problemas com o equipamento, abra um chamado de Suporte. Obrigado, Equipe TI</p>",
+                                          "emailMessage/Importance": "Normal"
+                                        },
+                                        "host": {
+                                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                                          "operationId": "SendEmailV2",
+                                          "connectionName": "shared_office365"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "else": {
+                                    "actions": {}
+                                  },
+                                  "expression": {
+                                    "and": [
+                                      {
+                                        "equals": [
+                                          "@triggerOutputs()?['body/wsf_status']",
+                                          962500005
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  "type": "If"
+                                }
+                              }
+                            },
+                            "expression": {
+                              "and": [
+                                {
+                                  "equals": [
+                                    "@triggerOutputs()?['body/wsf_status']",
+                                    962500004
+                                  ]
+                                }
+                              ]
+                            },
+                            "type": "If"
+                          }
+                        }
+                      },
+                      "expression": {
+                        "and": [
+                          {
+                            "equals": [
+                              "@triggerOutputs()?['body/wsf_status']",
+                              962500003
+                            ]
+                          }
+                        ]
+                      },
+                      "type": "If"
+                    }
+                  }
+                },
+                "expression": {
+                  "and": [
+                    {
+                      "equals": [
+                        "@triggerOutputs()?['body/wsf_status']",
+                        962500002
+                      ]
+                    }
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "e27a5228-3982-48ed-8ef8-71e996a204d7"
+                },
+                "type": "If"
+              }
+            }
+          },
+          "expression": {
+            "and": [
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/wsf_status']",
+                  962500001
+                ]
+              }
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a08f2635-0301-4541-bdea-11dd3b7230c8"
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}
